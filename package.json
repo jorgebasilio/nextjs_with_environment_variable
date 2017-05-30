@@ -3,16 +3,40 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "keywords": [
+    "ES6",
+    "next.js",
+    "react",
+    "redux"
+  ],
   "scripts": {
     "dev": "ENV='developmentqa' next",
     "build": "next build",
     "start": "next start"
   },
   "author": "Jorge Basilio",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "next": "beta",
+    "immutable": "^3.8.1",
+    "isomorphic-fetch": "2.2.1",
+    "next": "latest",
+    "next-redux-wrapper": "^1.0.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.3",
+    "react-styled-flexboxgrid": "1.0.1",
+    "redux": "^3.6.0",
+    "styled-components": "1.4.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "7.1.1",
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.24.0",
+    "eslint": "3.18.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0"
   }
 }
