@@ -25,10 +25,11 @@ const makeStore = (initialState = data) => {
 }
 
 // set actions
-function addTaskAction(task) {
+function addTaskAction(task, task_id) {
   return {
     type: 'ADD_TASK',
     payload: {
+      task_id: task_id,
       status: 'pending',
       content: task
     }
@@ -37,10 +38,17 @@ function addTaskAction(task) {
 
 // component container
 class IndexPage extends React.Component {
+  state = {
+    task_id: 1
+  }
+
   handleSubmit = (event) => {
+    const { task_id } = this.state;
+    const { dispatch } = this.props;
     event.preventDefault();
     if(event.target[0].value.trim() == "") return null
-    this.props.dispatch(addTaskAction(event.target[0].value))
+    this.setState({task_id: task_id + 1});
+    dispatch(addTaskAction(event.target[0].value, task_id))
     event.target[0].value = "";
   }
 
