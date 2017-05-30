@@ -17,13 +17,12 @@ export const Li = styled.li`
 }
 `;
 
-
 // actions
 export const changeStatusAction = (id, status) => {
   return {
-    type: 'CHANGE_STATUS',
+    type: 'CHANGE_STATUS_TASK',
     payload: {
-      id: id,
+      task_id: id,
       status: status
     }
   }
@@ -49,10 +48,9 @@ class ToDo extends Component {
   }
 
   handleStatus() {
-    const { id } = this.props;
-    const status = this.status() ? 'completed' : 'pending';
-    console.log('aquii');
-    this.props.dispatch(changeStatusAction(id, status));
+    const { task_id } = this.props;
+    const status = this.status() ? 'pending' : 'completed' ;
+    this.props.dispatch(changeStatusAction(task_id, status));
   }
 
   render() {
@@ -71,7 +69,6 @@ class ToDo extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log( state);
   return {
     tasks: state.tasks
   };

@@ -43,7 +43,7 @@ class IndexPage extends React.Component {
   }
 
   handleSubmit = (event) => {
-    const { task_id } = this.state;
+    const { task_id }  = this.state;
     const { dispatch } = this.props;
     event.preventDefault();
     if(event.target[0].value.trim() == "") return null
