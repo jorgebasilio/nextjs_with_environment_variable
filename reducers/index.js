@@ -11,6 +11,14 @@ function reducer(state = {tasks: []}, action) {
           { ...task, status: action.payload.status } : task;
       })
       return {...state, tasks: tasks}
+    case 'REMOVE_TASK':
+      tasks = state.tasks
+      tasks.splice(action.payload.content,1)
+        return{
+          ...state,
+          status: 'deleted',
+          tasks: tasks
+        }
     default:
       return state;
   }

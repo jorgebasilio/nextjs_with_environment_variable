@@ -18,8 +18,10 @@ class List extends Component {
     tasks: []
   }
 
+
   render() {
     const { tasks } = this.props;
+    const { _handleClick } = this;
     return (
       <Ul>
         { tasks.map((task, i) => (<ToDo key={i} {...task} />)) }
@@ -29,7 +31,6 @@ class List extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log( state);
   return {
     tasks: state.tasks
   };
