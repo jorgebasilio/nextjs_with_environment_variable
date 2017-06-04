@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
+
+// styles
 import { Input, Button } from './styles/form';
 
 function Form({ defaultValue, onSubmit }) {

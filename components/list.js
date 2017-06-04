@@ -1,13 +1,11 @@
 import { Component, PropTypes } from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
+
+// styles
+import { Ul } from './styles/list';
 
 // components
 import ToDo from './todo'
-
-export const Ul = styled.ul`
-  list-style: none;
-`;
 
 class List extends Component {
   static propTypes = {
@@ -17,7 +15,6 @@ class List extends Component {
   static defaultProps = {
     tasks: []
   }
-
 
   render() {
     const { tasks } = this.props;
